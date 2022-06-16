@@ -1,7 +1,8 @@
 FROM ubuntu:21.04
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install qemu-system-x86 xfce4 xfce4-goodies gnome-desktop xfce4-weather-plugin novnc neofetch
+RUN apt-get install qemu-system-x86 xfce4 -y
+RUN dpkg --configure -a
 RUN useradd rafa
 
 COPY novnc.zip /novnc.zip
