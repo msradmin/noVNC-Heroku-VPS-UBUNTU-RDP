@@ -1,8 +1,8 @@
 FROM ubuntu:21.04
 
 RUN apt-get update && apt-get upgrade -y
-
-RUN apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils lxqt neofetch
+RUN apt-get install qemu-kvm qemu openssh-server qemu-system-x86 xfce novnc neofetch
+RUN useradd rafa
 
 COPY novnc.zip /novnc.zip
 COPY . /system
@@ -15,3 +15,4 @@ RUN chmod +x /system/supervisor.sh
 
 CMD ["/system/supervisor.sh"]
 RUN neofetch
+RUN ip a
