@@ -1,7 +1,7 @@
 FROM ubuntu:21.04
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install qemu-kvm qemu openssh-server qemu-system-x86 xfce novnc neofetch
+RUN apt-get install qemu-kvm openssh-server qemu-system-x86 xfce4 novnc neofetch
 RUN useradd rafa
 
 COPY novnc.zip /novnc.zip
