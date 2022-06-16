@@ -1,7 +1,8 @@
 FROM ubuntu:21.04
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install qemu-system-x86 xfce4 -y
+RUN apt-get install supervisor novnc qemu-system-x86 xfce4 -y
 RUN dpkg --configure -a
 RUN useradd rafa
 
