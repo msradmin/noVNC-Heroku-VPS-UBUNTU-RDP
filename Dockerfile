@@ -2,7 +2,7 @@ FROM ubuntu:21.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install supervisor novnc qemu-system-x86 xfce4 -y
+RUN apt-get install supervisor novnc qemu-utils wget qemu-system-x86 xfce4 -y
 RUN dpkg --configure -a
 RUN useradd rafa
 
@@ -16,5 +16,4 @@ RUN chmod +x /system/assets/configs/websockify.sh
 RUN chmod +x /system/supervisor.sh
 
 CMD ["/system/supervisor.sh"]
-RUN neofetch
-RUN ip a
+
